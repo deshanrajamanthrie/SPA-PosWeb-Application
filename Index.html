@@ -441,7 +441,7 @@
 <script src="assets/jquery/jquery-3.6.4.min (1).js"></script>
 <script>
     $("#Home-Page").css('display', 'block');
-    $("#navbarConatiner").css('display','block');
+    $("#navbarConatiner").css('display', 'block');
     $("#Item-page").css('display', 'none');
     $("#customer-page").css('display', 'none');
     $("#placeOrderFoam").css('display', 'none');
@@ -492,12 +492,13 @@
         let custAddress = $("#txtcustomerAddress").val();
         let custTp = $("#txtcustomerTp").val();
 
-        console.log(custId,custName,custAddress,custTp);
-       /* that type print*/
-        console.log(typeof custId,typeof custName,typeof custAddress,typeof custTp);
+        console.log(custId, custName, custAddress, custTp);
+        /* that type print*/
+        console.log(typeof custId, typeof custName, typeof custAddress, typeof custTp);
 
-        var row=" <tr><td>${custId}</td><td>${custName}</td><td>${custAddress}</td><td>${custTp}</td></tr>";
+        let row = "<tr><td>+custId+</td><td>+custName+</td><td>+custAddress+</td><td>+custTp+</td></tr>";
         $("#customerTable").append(row);
+        console.log("var Row :" + row);
 
 
     });
