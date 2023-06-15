@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="assets/boostrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/style/normalize.css">
     <style>
-        #navbarConatiner{
+        #navbarConatiner {
             height: 10vh;
         }
+
         #Home-Page {
 
-            height:88vh;
+            height: 88vh;
             background-color: #DCE2F0;
 
         }
@@ -38,7 +39,8 @@
         #placeOrderFoam {
             height: 100vh;
         }
-        body{
+
+        body {
             overscroll-behavior-y: none;
         }
 
@@ -448,7 +450,7 @@
 <script src="assets/jquery/jquery-3.6.4.min (1).js"></script>
 <script>
     $("#Home-Page").css('display', 'block');
-    $("#navbarConatiner").css('display','block');
+    $("#navbarConatiner").css('display', 'block');
     $("#Item-page").css('display', 'none');
     $("#customer-page").css('display', 'none');
     $("#placeOrderFoam").css('display', 'none');
@@ -494,10 +496,16 @@
     });
 
     $("#btn-SaveCustomer").click(function () {
-        $("#txtCustomerId").val();
-       $("#txtcustomerName").val();
-       $("#txtcustomerAddress").val();
-       $("#txtcustomerTp").val();
+        let custId = $("#txtCustomerId").val();
+        let custName = $("#txtcustomerName").val();
+        let custAddress = $("#txtcustomerAddress").val();
+        let custTp = $("#txtcustomerTp").val();
+
+        console.log(custId,custName,custAddress,custTp);
+       /* that type print*/
+        console.log(typeof custId,typeof custName,typeof custAddress,typeof custTp);
+
+
     });
 
 
