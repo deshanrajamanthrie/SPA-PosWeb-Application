@@ -264,26 +264,17 @@
                         <th scope="row">Contact</th>
                     </tr>
                     </thead>
-                    <tbody class="table-group-divider  bg-opacity-25">
+                    <tbody id="customerTable" class="table-group-divider  bg-opacity-25">
                     <tr>
-                        <td>C001</td>
-                        <td>Saman</td>
-                        <td>Kalutara</td>
-                        <td>0766771625</td>
+
 
                     </tr>
                     <tr>
-                        <td>C002</td>
-                        <td>Pasan</td>
-                        <td>Kalutara</td>
-                        <td>0718776543</td>
+
 
                     </tr>
                     <tr>
-                        <td>C003</td>
-                        <td>Nimal</td>
-                        <td>Horana</td>
-                        <td>0715809765</td>
+
 
                     </tr>
                     </tbody>
@@ -450,7 +441,7 @@
 <script src="assets/jquery/jquery-3.6.4.min (1).js"></script>
 <script>
     $("#Home-Page").css('display', 'block');
-    $("#navbarConatiner").css('display', 'block');
+    $("#navbarConatiner").css('display','block');
     $("#Item-page").css('display', 'none');
     $("#customer-page").css('display', 'none');
     $("#placeOrderFoam").css('display', 'none');
@@ -504,6 +495,9 @@
         console.log(custId,custName,custAddress,custTp);
        /* that type print*/
         console.log(typeof custId,typeof custName,typeof custAddress,typeof custTp);
+
+        var row=" <tr><td>${custId}</td><td>${custName}</td><td>${custAddress}</td><td>${custTp}</td></tr>";
+        $("#customerTable").append(row);
 
 
     });
