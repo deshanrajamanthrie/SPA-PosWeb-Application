@@ -120,21 +120,21 @@
                 <div class="col-6">
                     <label for="ItemName" class="col col-form-label ">Item Name</label>
                     <input type="text" class="form-control w-75 bg-success bg-opacity-25 border border-primary"
-                           id="ItemName" placeholder="Enter Item Name">
+                           id="itemName" placeholder="Enter Item Name">
                 </div>
                 <!-- ///////////-->
 
                 <div class="col-6">
                     <label for="ItemPrice" class="col col-form-label ">Item Price</label>
                     <input type="text" class="form-control w-75 bg-success bg-opacity-25 border border-primary"
-                           id="ItemPrice" placeholder="Enter Item Price">
+                           id="itemPrice" placeholder="Enter Item Price">
                 </div>
                 <!--///////////-->
 
                 <div class="col-6">
                     <label for="ItemQty" class="col col-form-label ">Item Qyt</label>
                     <input type="text" class="form-control w-75 bg-success bg-opacity-25 border border-primary"
-                           id="ItemQty" placeholder="Enter Item Qty">
+                           id="itemQty" placeholder="Enter Item Qty">
                 </div>
             </aside>
             <section class="col-4">
@@ -146,7 +146,7 @@
                 <!-- </section>-->
             </section>
             <section class="col mt-4 ms-5">
-                <button type="button" class="btn btn-outline-primary w-25">Save</button>
+                <button  id="item-save" type="button" class="btn btn-outline-primary w-25">Save</button>
                 <button type="button" class="btn btn-outline-success w-25">Update</button>
                 <button type="button" class="btn btn-outline-danger w-25">Delete</button>
 
@@ -164,33 +164,21 @@
                         <th scope="row">Item Qty</th>
                     </tr>
                     </thead>
-                    <tbody class="table-group-divider  bg-opacity-25">
+                    <tbody  id="itemTable" class="table-group-divider  bg-opacity-25">
                     <tr>
-                        <td>I001</td>
-                        <td>Soup</td>
-                        <td>30</td>
-                        <td>500</td>
+
 
                     </tr>
                     <tr>
-                        <td>I002</td>
-                        <td>IceCream</td>
-                        <td>50</td>
-                        <td>600</td>
+
 
                     </tr>
                     <tr>
-                        <td>I003</td>
-                        <td>Chocolate bar</td>
-                        <td>330</td>
-                        <td>100</td>
+
 
                     </tr>
                     <tr>
-                        <td>I004</td>
-                        <td>Yoghurt</td>
-                        <td>70</td>
-                        <td>50</td>
+
 
                     </tr>
                     </tbody>
@@ -477,6 +465,7 @@
         $("#placeOrderFoam").css('display', 'block');
 
     });
+    /*  customer Page===================================================================================================*/
 
     $("#Homeselector").click(function () {
         $("#Home-Page").css('display', 'block');
@@ -486,22 +475,39 @@
         $("#navbarConatiner").css('display', 'block')
     });
 
+
+
     $("#btn-SaveCustomer").click(function () {
-        let custId = $("#txtCustomerId").val();
-        let custName = $("#txtcustomerName").val();
-        let custAddress = $("#txtcustomerAddress").val();
-        let custTp = $("#txtcustomerTp").val();
+        let customerId = $("#txtCustomerId").val();
+        let customerName = $("#txtcustomerName").val();
+        let customerAddress = $("#txtcustomerAddress").val();
+        let customerTp = $("#txtcustomerTp").val();
 
-        console.log(custId, custName, custAddress, custTp);
+        console.log(customerId, customerName, customerAddress, customerTp);
         /* that type print*/
-        console.log(typeof custId, typeof custName, typeof custAddress, typeof custTp);
+        /*    console.log(typeof custId, typeof custName, typeof custAddress, typeof custTp);*/
 
-        let row = "<tr><td>+custId+</td><td>+custName+</td><td>+custAddress+</td><td>+custTp+</td></tr>";
+
+       let row='<tr><td>${customerId}</td><td>${customerName}</td><td>${customerAddress}</td><td>${customerTp}</td></tr>';
         $("#customerTable").append(row);
-        console.log("var Row :" + row);
+    });
 
+    /*  item Page===================================================================================================*/
+    $("#item-save").click(function () {
+         let itemCode=$("#itemCode").val();
+         let itemName=$("#itemName").val();
+         let itemPrice=$("#itemPrice").val();
+         let itemQty=$("#itemQty").val();
+
+         console.log(itemCode,itemName,itemPrice,itemQty);
+
+       let row1='<tr><td>${itemCode}</td><td>${itemName}</td><td>${itemPrice}</td><td>${itemQty}</td></tr>';
+
+        $("#itemTable").append(row1);
 
     });
+
+
 
 
 </script>
