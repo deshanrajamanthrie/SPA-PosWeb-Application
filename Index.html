@@ -111,7 +111,7 @@
                 <!-- </section>-->
             </section>
             <section class="col mt-4 ms-5">
-                <button  id="btn-saveItem" type="button" class="btn btn-outline-primary w-25">Save</button>
+                <button id="btn-saveItem" type="button" class="btn btn-outline-primary w-25">Save</button>
                 <button type="button" class="btn btn-outline-success w-25">Update</button>
                 <button type="button" class="btn btn-outline-danger w-25">Delete</button>
 
@@ -129,7 +129,7 @@
                         <th scope="row">Item Qty</th>
                     </tr>
                     </thead>
-                    <tbody  id="itemTable" class="table-group-divider  bg-opacity-25">
+                    <tbody id="itemTable" class="table-group-divider  bg-opacity-25">
 
                     </tbody>
 
@@ -182,7 +182,7 @@
                 <!-- </section>-->
             </section>
             <section class="col mt-4 ms-5">
-                <button  id="btn-SaveCustomer" type="button" class="btn btn-outline-primary w-25">Save</button>
+                <button id="btn-SaveCustomer" type="button" class="btn btn-outline-primary w-25">Save</button>
                 <button type="button" class="btn btn-outline-success w-25">Update</button>
                 <button type="button" class="btn btn-outline-danger w-25">Delete</button>
 
@@ -200,21 +200,15 @@
                         <th scope="row">TP</th>
                     </tr>
                     </thead>
-                    <tbody  class="table-group-divider  bg-opacity-25"id="customerTable">
-                    <tr>
-                        <!--<td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td>  </td>-->
-                    </tr>
+                    <tbody class="table-group-divider  bg-opacity-25 " id="customerTable">
+
+
                     </tbody>
                 </table>
             </article>
         </section>
 
     </main>
-
-
 
 
     <!--Customer PageEnd-->
@@ -428,35 +422,38 @@
         let customerAddress = $("#txtcustomerAddress").val();
         let customerTp = $("#txtcustomerTp").val();
 
-        console.log(customerId, customerName, customerAddress, customerTp);
+        /*console.log(customerId, customerName, customerAddress, customerTp);*/
         /* that type print*/
         /*    console.log(typeof custId, typeof custName, typeof custAddress, typeof custTp);*/
 
 
         let row = `<tr><td>${customerId}</td><td>${customerName}</td><td>${customerAddress}</td><td>${customerTp}</td></tr>`;
         $("#customerTable").append(row);
+
+        $("#customerTable>tr").click(function () {
+            let custId = $(this).children().eq(0).text();
+            console.log(custId);
+            let custName = $(this).children().eq(1).text();
+            let custAddress = $(this).children().eq(2).text();
+            let custTP = $(this).children().eq(3).text();
+
+            console.log(custId, custName, custAddress, custTP);
+            $("#txtCustomerId").val(custId);
+            $("#txtcustomerName").val(custName);
+            $("#txtcustomerAddress").val(custAddress);
+            $("#txtcustomerTp").val(custTP);
+
+
+        })
+
     });
-    $("#customerTable>tr").click(function () {
-        // let l=$(this);
-        // console.log(l);
-        let custId=$(this).children().eq("0").text();
-        let custName=$(this).find().eq("1").text();
-        let custAddress=$(this).children.eq("2").text();
-        let custTP=$(this).children(":eq(3)").text();
-
-        console.log(custId,custName,custAddress,custTP);
-        $("#txtCustomerId").placement= custId.val();
-        $("#txtcustomerName").placeholder=custName.val();
-
-    })
-
 
 
     /*  item Page===================================================================================================*/
     $("#btn-saveItem").click(function () {
         let itemCode = $("#txtitemCode").val();
         let itemName = $("#txtitemName").val();
-        let itemPrice = $("txt#itemPrice").val();
+        let itemPrice = $("#txtitemPrice").val();
         let itemQty = $("#txtitemQty").val();
 
         console.log(itemCode, itemName, itemPrice, itemQty);
@@ -464,6 +461,20 @@
 
         let row1 = `<tr><td>${itemCode}</td><td>${itemName}</td><td>${itemPrice}</td><td>${itemQty}</td></tr>`;
         $("#itemTable").append(row1);
+
+        $("#itemTable > tr").click(function () {
+
+            let itemId = $(this).children().eq(0).text();
+            let itemName = $(this).children().eq(1).text();
+            let itemPrice = $(this).children().eq(2).text();
+            let itemQty = $(this).children().eq(3).text();
+
+            $("#txtitemCode").val(itemId);
+            $("#txtitemName").val(itemName);
+            $("#txtitemPrice").val(itemPrice);
+            $("#txtitemQty").val(itemQty);
+
+        })
 
 
     });
