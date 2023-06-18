@@ -1,0 +1,37 @@
+#navbarConatiner {
+    height: 10vh;
+}
+
+#Home-Page {
+
+    height: 88vh;
+    background-color: #DCE2F0;
+
+}
+
+.img-pos-icon {
+    width: 89px;
+    height: 60px;
+}
+
+body > main:nth-child(2) {
+    background-color: #DCE2F0;
+}
+
+#customer-page {
+    height: 100vh;
+    /*background-color:#DCE2F0 ;*/
+}
+
+#Item-page {
+
+}
+
+#placeOrderFoam {
+    height: 100vh;
+}
+
+body {
+
+
+}

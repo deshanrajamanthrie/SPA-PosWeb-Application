@@ -6,43 +6,8 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link rel="stylesheet" href="assets/boostrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/style/normalize.css">
+    <link rel="stylesheet" href="assets/style/basic.css">
     <style>
-        #navbarConatiner {
-            height: 10vh;
-        }
-
-        #Home-Page {
-
-            height: 88vh;
-            background-color: #DCE2F0;
-
-        }
-
-        .img-pos-icon {
-            width: 89px;
-            height: 60px;
-        }
-
-        body > main:nth-child(2) {
-            background-color: #DCE2F0;
-        }
-
-        #customer-page {
-            height: 100vh;
-            /*background-color:#DCE2F0 ;*/
-        }
-
-        #Item-page {
-
-        }
-
-        #placeOrderFoam {
-            height: 100vh;
-        }
-
-        body {
-            overscroll-behavior-y: none;
-        }
 
 
     </style>
@@ -111,30 +76,30 @@
             <!--  <section class="col row-cols-1 col-xxl-12 mt-5 justify-content-center">-->
             <aside class="col-xxl-12 justify-content-center mt-4 ">
                 <div class="col-6">
-                    <label for="itemCode" class="col-form-label ">Item Code:</label>
+                    <label for="txtitemCode" class="col-form-label ">Item Code:</label>
                     <input type="text" class="form-control w-75 bg-success bg-opacity-25 border border-danger"
-                           id="itemCode" placeholder="Enter Item Code">
+                           id="txtitemCode" placeholder="Enter Item Code">
+                </div>
+
+
+                <div class="col-6">
+                    <label for="txtitemName" class="col col-form-label ">Item Name</label>
+                    <input type="text" class="form-control w-75 bg-success bg-opacity-25 border border-primary"
+                           id="txtitemName" placeholder="Enter Item Name">
                 </div>
                 <!-- ///////////-->
 
                 <div class="col-6">
-                    <label for="ItemName" class="col col-form-label ">Item Name</label>
+                    <label for="txtitemPrice" class="col col-form-label ">Item Price</label>
                     <input type="text" class="form-control w-75 bg-success bg-opacity-25 border border-primary"
-                           id="itemName" placeholder="Enter Item Name">
-                </div>
-                <!-- ///////////-->
-
-                <div class="col-6">
-                    <label for="ItemPrice" class="col col-form-label ">Item Price</label>
-                    <input type="text" class="form-control w-75 bg-success bg-opacity-25 border border-primary"
-                           id="itemPrice" placeholder="Enter Item Price">
+                           id="txtitemPrice" placeholder="Enter Item Price">
                 </div>
                 <!--///////////-->
 
                 <div class="col-6">
-                    <label for="ItemQty" class="col col-form-label ">Item Qyt</label>
+                    <label for="txtitemQty" class="col col-form-label ">Item Qyt</label>
                     <input type="text" class="form-control w-75 bg-success bg-opacity-25 border border-primary"
-                           id="itemQty" placeholder="Enter Item Qty">
+                           id="txtitemQty" placeholder="Enter Item Qty">
                 </div>
             </aside>
             <section class="col-4">
@@ -146,7 +111,7 @@
                 <!-- </section>-->
             </section>
             <section class="col mt-4 ms-5">
-                <button  id="item-save" type="button" class="btn btn-outline-primary w-25">Save</button>
+                <button  id="btn-saveItem" type="button" class="btn btn-outline-primary w-25">Save</button>
                 <button type="button" class="btn btn-outline-success w-25">Update</button>
                 <button type="button" class="btn btn-outline-danger w-25">Delete</button>
 
@@ -165,22 +130,7 @@
                     </tr>
                     </thead>
                     <tbody  id="itemTable" class="table-group-divider  bg-opacity-25">
-                    <tr>
 
-
-                    </tr>
-                    <tr>
-
-
-                    </tr>
-                    <tr>
-
-
-                    </tr>
-                    <tr>
-
-
-                    </tr>
                     </tbody>
 
                 </table>
@@ -203,8 +153,6 @@
                     <input type="text" class="form-control w-75 bg-success bg-opacity-25 border border-danger"
                            id="txtCustomerId" placeholder="Enter Customer Id">
                 </div>
-                <!-- ///////////-->
-
                 <div class="col-6">
                     <label for="txtcustomerName" class="col col-form-label ">Customer Name</label>
                     <input type="text" class="form-control w-75 bg-success bg-opacity-25 border border-primary"
@@ -220,9 +168,9 @@
                 <!--///////////-->
 
                 <div class="col-6">
-                    <label for="txtcustomerTp" class="col col-form-label ">Contact No</label>
+                    <label for="txtcustomerTp" class="col col-form-label ">Customer Telephone Number</label>
                     <input type="text" class="form-control w-75 bg-success bg-opacity-25 border border-primary"
-                           id="txtcustomerTp" placeholder="Enter Customer Contact Number ">
+                           id="txtcustomerTp" placeholder="Enter TP">
                 </div>
             </aside>
             <section class="col-4">
@@ -234,7 +182,7 @@
                 <!-- </section>-->
             </section>
             <section class="col mt-4 ms-5">
-                <button id="btn-SaveCustomer" type="button" class="btn btn-outline-primary w-25">Save</button>
+                <button  id="btn-SaveCustomer" type="button" class="btn btn-outline-primary w-25">Save</button>
                 <button type="button" class="btn btn-outline-success w-25">Update</button>
                 <button type="button" class="btn btn-outline-danger w-25">Delete</button>
 
@@ -249,21 +197,15 @@
                         <th scope="row">ID</th>
                         <th scope="row">Name</th>
                         <th scope="row">Address</th>
-                        <th scope="row">Contact</th>
+                        <th scope="row">TP</th>
                     </tr>
                     </thead>
-                    <tbody id="customerTable" class="table-group-divider  bg-opacity-25">
+                    <tbody  class="table-group-divider  bg-opacity-25"id="customerTable">
                     <tr>
-
-
-                    </tr>
-                    <tr>
-
-
-                    </tr>
-                    <tr>
-
-
+                        <!--<td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>  </td>-->
                     </tr>
                     </tbody>
                 </table>
@@ -271,6 +213,10 @@
         </section>
 
     </main>
+
+
+
+
     <!--Customer PageEnd-->
 
     <!--  ////////-Place Order Foam-//////////-->
@@ -476,7 +422,6 @@
     });
 
 
-
     $("#btn-SaveCustomer").click(function () {
         let customerId = $("#txtCustomerId").val();
         let customerName = $("#txtcustomerName").val();
@@ -488,26 +433,40 @@
         /*    console.log(typeof custId, typeof custName, typeof custAddress, typeof custTp);*/
 
 
-       let row='<tr><td>${customerId}</td><td>${customerName}</td><td>${customerAddress}</td><td>${customerTp}</td></tr>';
+        let row = `<tr><td>${customerId}</td><td>${customerName}</td><td>${customerAddress}</td><td>${customerTp}</td></tr>`;
         $("#customerTable").append(row);
     });
+    $("#customerTable>tr").click(function () {
+        // let l=$(this);
+        // console.log(l);
+        let custId=$(this).children().eq("0").text();
+        let custName=$(this).find().eq("1").text();
+        let custAddress=$(this).children.eq("2").text();
+        let custTP=$(this).children(":eq(3)").text();
+
+        console.log(custId,custName,custAddress,custTP);
+        $("#txtCustomerId").placement= custId.val();
+        $("#txtcustomerName").placeholder=custName.val();
+
+    })
+
+
 
     /*  item Page===================================================================================================*/
-    $("#item-save").click(function () {
-         let itemCode=$("#itemCode").val();
-         let itemName=$("#itemName").val();
-         let itemPrice=$("#itemPrice").val();
-         let itemQty=$("#itemQty").val();
+    $("#btn-saveItem").click(function () {
+        let itemCode = $("#txtitemCode").val();
+        let itemName = $("#txtitemName").val();
+        let itemPrice = $("txt#itemPrice").val();
+        let itemQty = $("#txtitemQty").val();
 
-         console.log(itemCode,itemName,itemPrice,itemQty);
+        console.log(itemCode, itemName, itemPrice, itemQty);
 
-       let row1='<tr><td>${itemCode}</td><td>${itemName}</td><td>${itemPrice}</td><td>${itemQty}</td></tr>';
 
+        let row1 = `<tr><td>${itemCode}</td><td>${itemName}</td><td>${itemPrice}</td><td>${itemQty}</td></tr>`;
         $("#itemTable").append(row1);
 
+
     });
-
-
 
 
 </script>
