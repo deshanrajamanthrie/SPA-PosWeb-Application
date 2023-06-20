@@ -417,6 +417,9 @@
 
 
     $("#btn-SaveCustomer").click(function () {
+
+        $("#customerTable>tr").off('click');
+
         let customerId = $("#txtCustomerId").val();
         let customerName = $("#txtcustomerName").val();
         let customerAddress = $("#txtcustomerAddress").val();
@@ -430,9 +433,9 @@
         let row = `<tr><td>${customerId}</td><td>${customerName}</td><td>${customerAddress}</td><td>${customerTp}</td></tr>`;
         $("#customerTable").append(row);
 
+
         $("#customerTable>tr").click(function () {
             let custId = $(this).children().eq(0).text();
-            console.log(custId);
             let custName = $(this).children().eq(1).text();
             let custAddress = $(this).children().eq(2).text();
             let custTP = $(this).children().eq(3).text();
