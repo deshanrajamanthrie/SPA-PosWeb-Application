@@ -434,7 +434,7 @@
         $("#customerTable").append(row);
 
 
-        $("#customerTable>tr").click(function () {
+        $("#customerTable>tr")  .click(function () {
             let custId = $(this).children().eq(0).text();
             let custName = $(this).children().eq(1).text();
             let custAddress = $(this).children().eq(2).text();
@@ -450,10 +450,35 @@
         })
 
     });
+    $("#txtCustomerId").on('keydown',function (event) {
+      //  console.log("keyDown");
+      //  console.log(event.key);
+        if(event.key=='Enter'){
+            $("#txtcustomerName").focus();
+        }
+    });
+    $("#txtcustomerName").on('keydown',function (event) {
+       // console.log("keyDown");
+      //  console.log(event.key);
+        if(event.key=='Enter'){
+            $("#txtcustomerAddress").focus();
+        }
+    });
+    $("#txtcustomerAddress").on('keydown',function (event) {
+        console.log("keyDown");
+        console.log(event.key);
+        if(event.key=='Enter'){
+            $("#txtcustomerTp").focus();
+        }
+    })
+
+
+
 
 
     /*  item Page===================================================================================================*/
     $("#btn-saveItem").click(function () {
+        $("#itemTable > tr").off('click');
         let itemCode = $("#txtitemCode").val();
         let itemName = $("#txtitemName").val();
         let itemPrice = $("#txtitemPrice").val();
