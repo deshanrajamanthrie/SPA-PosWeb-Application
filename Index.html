@@ -448,9 +448,18 @@
             $("#txtcustomerTp").val(custTP);
 
 
-        })
+        });
+        //delete row after dbl click
+        $("#customerTable>tr").on('dblclick',function () {
+            alert("hello")
+            $(this).remove();
+        });
 
     });
+
+
+    //Enter after next Row
+
     $("#txtCustomerId").on('keydown', function (event) {
         //  console.log("keyDown");
         //  console.log(event.key);
@@ -474,11 +483,10 @@
     })
 
     //doble click after delete row
-    $("#customerTable>tr").on('dblclick',function () {
-        alert("hello")
-        $("#customerTable>tr").remove();
 
-    })
+
+
+
 
 
     /*  item Page===================================================================================================*/
