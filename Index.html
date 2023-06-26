@@ -150,8 +150,9 @@
             <aside class="col-xxl-12 justify-content-center mt-4">
                 <div class="col-6">
                     <label for="txtCustomerId" class="col-form-label ">Customer Id:</label>
-                    <input type="text" class="form-control w-75 bg-success bg-opacity-25 border border-danger"
+                    <input type="text" class="form-control w-75 bg-success bg-opacity-25 border"
                            id="txtCustomerId" placeholder="Enter Customer Id">
+                    <p><small id="error" class="text-danger p-1"></small></p>
                 </div>
                 <div class="col-6">
                     <label for="txtcustomerName" class="col col-form-label ">Customer Name</label>
@@ -406,6 +407,8 @@
         $("#placeOrderFoam").css('display', 'block');
 
     });
+
+    //display block and hide
     /*  customer Page===================================================================================================*/
 
     $("#Homeselector").click(function () {
@@ -449,16 +452,36 @@
 
 
         });
-        //delete row after dbl click
+        //delete row after dbl click in the row
         $("#customerTable>tr").on('dblclick',function () {
-            alert("hello")
+            /*alert("hello")*/
             $(this).remove();
         });
 
     });
 
+    var regExCusid=/^(C00-)[0-9]{3,4}$/;
 
-    //Enter after next Row
+      $("#txtCustomerId").keyup(function () {
+           let input=$("#txtCustomerId").val();
+           if (regExCusid.test(input)){
+              /* $("#txtCustomerId").css('border','none');*/
+               $("#txtCustomerId").css('border','2px solid green')
+               $("#error").text("");
+           }else {
+               /*$("#txtCustomerId").css('border','none');*/
+               $("#txtCustomerId").css('border','2px solid red')
+               $("#error").text("Wrong Format : C00-001" );
+           }
+          
+      });
+
+
+
+
+
+
+   //====================================================== //Enter after next Row
 
     $("#txtCustomerId").on('keydown', function (event) {
         //  console.log("keyDown");
@@ -482,7 +505,7 @@
         }
     })
 
-    //doble click after delete row
+
 
 
 
