@@ -367,6 +367,7 @@
 </main>
 <script src="./assets/boostrap/js/bootstrap.bundle.js"></script>
 <script src="assets/jquery/jquery-3.6.4.min (1).js"></script>
+
 <script>
     $("#Home-Page").css('display', 'block');
     $("#navbarConatiner").css('display', 'block');
@@ -434,7 +435,7 @@
         $("#customerTable").append(row);
 
 
-        $("#customerTable>tr")  .click(function () {
+        $("#customerTable>tr").click(function () {
             let custId = $(this).children().eq(0).text();
             let custName = $(this).children().eq(1).text();
             let custAddress = $(this).children().eq(2).text();
@@ -450,34 +451,39 @@
         })
 
     });
-    $("#txtCustomerId").on('keydown',function (event) {
-      //  console.log("keyDown");
-      //  console.log(event.key);
-        if(event.key=='Enter'){
+    $("#txtCustomerId").on('keydown', function (event) {
+        //  console.log("keyDown");
+        //  console.log(event.key);
+        if (event.key == 'Enter') {
             $("#txtcustomerName").focus();
         }
     });
-    $("#txtcustomerName").on('keydown',function (event) {
-       // console.log("keyDown");
-      //  console.log(event.key);
-        if(event.key=='Enter'){
+    $("#txtcustomerName").on('keydown', function (event) {
+        // console.log("keyDown");
+        //  console.log(event.key);
+        if (event.key == 'Enter') {
             $("#txtcustomerAddress").focus();
         }
     });
-    $("#txtcustomerAddress").on('keydown',function (event) {
-        console.log("keyDown");
-        console.log(event.key);
-        if(event.key=='Enter'){
+    $("#txtcustomerAddress").on('keydown', function (event) {
+       // console.log("keyDown");
+       // console.log(event.key);
+        if (event.key == 'Enter') {
             $("#txtcustomerTp").focus();
         }
     })
 
+    //doble click after delete row
+    $("#customerTable>tr").on('dblclick',function () {
+        alert("hello")
+        $("#customerTable>tr").remove();
 
-
+    })
 
 
     /*  item Page===================================================================================================*/
     $("#btn-saveItem").click(function () {
+
         $("#itemTable > tr").off('click');
         let itemCode = $("#txtitemCode").val();
         let itemName = $("#txtitemName").val();
@@ -497,13 +503,39 @@
             let itemPrice = $(this).children().eq(2).text();
             let itemQty = $(this).children().eq(3).text();
 
+            console.log(itemId, itemName, itemPrice, itemQty);
             $("#txtitemCode").val(itemId);
             $("#txtitemName").val(itemName);
             $("#txtitemPrice").val(itemPrice);
             $("#txtitemQty").val(itemQty);
-
         })
+    });
 
+
+    $("#txtitemCode").keydown(function (event) {
+
+        if (event.key == 'Enter') {
+            $("#txtitemName").focus();
+        }
+    });
+
+
+    $("#txtitemName").keydown(function (event) {
+
+        if (event.key == 'Enter') {
+            $("#txtitemPrice").focus();
+        }
+    });
+    $("#txtitemPrice").keydown(function (event) {
+
+        if (event.key == 'Enter') {
+            $("#txtitemQty").focus();
+        }
+    });
+    $("#txtitemQty").keydown(function (event) {
+        if(event.key=='Enter'){
+            $("#btn-saveItem").focus();
+        }
 
     });
 
